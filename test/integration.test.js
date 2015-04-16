@@ -31,7 +31,7 @@ servers.forEach(function(server){
         this.timeout(15000);
 
         before("Server Tests Setup", function(done){
-            if (record && fs.existsSync(fixture) && server.parsed.host !== 'rets.server.com:9160') {
+            if (record && fs.existsSync(fixture) && server.parsed.host !== 'localhost') {
                 fs.unlink(fixture, function(){
                     done();
                 });
@@ -45,7 +45,7 @@ servers.forEach(function(server){
         });
 
         after("Server Test Cleanup", function(done){
-            if (record && server.parsed.host !== 'rets.server.com:9160') {
+            if (record && server.parsed.host !== 'localhost') {
                 fs.writeFile(fixture, JSON.stringify(nock.recorder.play(), null, 4), function(){
                     // nock.recorder.restore();
                     done();
