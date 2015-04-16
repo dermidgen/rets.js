@@ -3,7 +3,7 @@
 var url = require('url');
 var path = require('path');
 var fs = require('fs');
-// var debug = require('debug')('rets.js:test:servers:live');
+// var debug = require('debug')('rets.js:test:integration');
 var nock = require('nock');
 
 var RETS = require('../');
