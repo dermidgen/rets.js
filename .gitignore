@@ -1,5 +1,2 @@
-test/tmp/*
-test/fixtures/*
-!test/fixtures/localhost.json
 node_modules
 .DS_Store

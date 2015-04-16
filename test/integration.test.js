@@ -3,28 +3,29 @@
 var url = require('url');
 var path = require('path');
 var fs = require('fs');
-// var debug = require('debug')('rets.js:test:integration');
+var debug = require('debug')('rets.js:test:integration');
 var nock = require('nock');
 
 var RETS = require('../');
 
-var record = process.env.RECORD === 'true';
-
-if (record) {
-    nock.recorder.clear();
-    nock.recorder.rec({
-        dont_print: true,
-        output_objects: true
-    });
-}
+// debug(process.env.PWD);
 
 var config_path = process.env.CONFIG_PATH || path.join(__dirname, './config.json');
+var fixture_path = process.env.FIXTURE_PATH || path.join(__dirname, './fixture.json');
 
 var server = require(config_path);
     server.parsed = url.parse(server.config.url);
+    if (fs.existsSync(fixture_path)) {
+        var nocks = nock.load(fixture_path);
+        nocks.forEach(function(/*config*/) {
+            // console.log(config);
+        });
+    // } else {
+        // trigger recording here?
+        // console.log();
+    }
 var instance = new RETS(server.config);
 
-        var fixture = path.join(__dirname, 'fixtures') + '/' + server.parsed.host + '.json';
 describe('Integration against: ' + instance.session.url.host, function(){
 
     this.timeout(30000);
