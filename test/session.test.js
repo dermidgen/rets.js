@@ -6,7 +6,7 @@ module.exports = describe('Session', function(){
 
     var Session = null;
     var instance = null;
-    var config = require('./config.json')[0].config;
+    var config = require('./config.json').config;
     var expectedDefaults = {
         url: null,
         ua: {

@@ -5,7 +5,7 @@ module.exports = describe('RETS', function(){
 
     var RETS = null;
     var instance = null;
-    var config = require('./config.json')[0].config;
+    var config = require('./config.json').config;
 
     before('Load RETS', function() {
         RETS = require('../lib/rets');
