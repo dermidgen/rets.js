@@ -28,7 +28,7 @@ servers.forEach(function(server){
 
         var instance = new RETS(server.config);
         var fixture = path.join(__dirname, 'fixtures') + '/' + server.parsed.host + '.json';
-        this.timeout(15000);
+        this.timeout(30000);
 
         before("Server Tests Setup", function(done){
             if (record && fs.existsSync(fixture) && server.parsed.host !== 'localhost') {
