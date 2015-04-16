@@ -47,7 +47,6 @@ servers.forEach(function(server){
         after("Server Test Cleanup", function(done){
             if (record && server.parsed.host !== 'localhost') {
                 fs.writeFile(fixture, JSON.stringify(nock.recorder.play(), null, 4), function(){
-                    // nock.recorder.restore();
                     done();
                 });
             } else {
