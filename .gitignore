@@ -1,9 +1,6 @@
-config.json
 test/tmp/*
-test/servers/*
-!test/servers/index.js
-!test/servers/mock.js
-!test/servers/live.js
-!test/servers/config.example.json
+test/fixtures/*
+!test/fixtures/localhost.json
+test/config.json
 node_modules
 .DS_Store

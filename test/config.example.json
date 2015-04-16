@@ -1,11 +1,13 @@
 [
     {
-        "url": "http://user:pass@rets.server.com:9160/Login.asmx/Login",
-        "ua": {
-            "name": "RETS-Connector1/2",
-            "pass": ""
+        "config": {
+            "url": "http://user:pass@localhost/Login.asmx/Login",
+            "ua": {
+                "name": "RETS-Connector1/2",
+                "pass": ""
+            },
+            "version": "RETS/1.7.2"
         },
-        "version": "RETS/1.7.2",
         "search": {
             "SearchType": "Property",
             "Class": "ResidentialProperty",
