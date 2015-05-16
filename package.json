@@ -46,7 +46,7 @@
   },
   "scripts": {
     "pretest": "if [ ! -f test/servers/config.json ]; then cp -n test/servers/config.example.json test/servers/config.json; fi; jshint .",
-    "test": "rm -rf test/tmp && mocha test/index",
+    "test": "mocha test/index",
     "test-servers": "rm -rf test/tmp; mocha test/servers/live",
     "test-watch": "DEBUG=rets.js:* rm -rf test/tmp; mocha --watch --recursive --reporter spec test/index",
     "docs": "rm -rf docs && jsdox --output docs lib"
