@@ -18,10 +18,6 @@ var rets = new RETS({
     }
 });
 
-var settings = new Table({
-    head: ['key', 'value']
-});
-
 var capabilities = new Table({
     head: ['key', 'value']
 });
@@ -36,6 +32,14 @@ rets.on('login',function(err){
     if (err) {debug("err: %o", err);}
 
     debug("SETTINGS:");
+    var settings = new Table({
+        head: ['key', 'value']
+    });
+    for (var setting in this.session.settings) {
+        if (this.session.settings.hasOwnProperty(setting)) {
+            settings.push([setting, this.session.settings[setting]]);
+        }
+    }
     settings.toString().split("\n").forEach(function(line){
         debug(line);
     });
