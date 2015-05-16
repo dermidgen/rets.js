@@ -18,11 +18,6 @@ var rets = new RETS({
     }
 });
 
-rets.login().on('setting',function(key, value){
-    settings.push([key, value]);
-}).on('capability',function(key, value){
-    capabilities.push([key, value]);
-});
 
 rets.on('login',function(err){
     if (err) {debug("err: %o", err);}
