@@ -95,3 +95,4 @@ rets.on('login',function(err){
     });
     rets.getMetadata();
 });
+rets.login();
